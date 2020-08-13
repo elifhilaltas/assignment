@@ -16,13 +16,13 @@ public class SecurityConfiguration extends AbstractSecurityConfiguration {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
-		http.authorizeRequests().antMatchers("/**/favicon.ico","/css/**","/js/**","/images/**","/webjars/**","/login","/home").permitAll();
-		//http.authorizeRequests().antMatchers("/actuator/**").access("hasRole('ADMIN')");
-		//http.authorizeRequests().anyRequest().authenticated();
-		//http.formLogin().loginPage("/login.html").loginProcessingUrl("/login").failureUrl("/login.html?loginFailed=true");
+
+		http.authorizeRequests().antMatchers("/**/favicon.ico","/css/**","/js/**","/images/**","/webjars/**","/login.html","/home").permitAll();
+		http.authorizeRequests().antMatchers("/actuator/**").access("hasRole('ADMIN')");
+		http.authorizeRequests().anyRequest().authenticated();
+		http.formLogin().loginPage("/login.html").loginProcessingUrl("/login").failureUrl("/login.html?loginFailed=true");
 		http.rememberMe().userDetailsService(userDetailsService);
-		
+
 		}
 	
 	
