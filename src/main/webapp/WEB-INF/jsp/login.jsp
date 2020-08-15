@@ -24,12 +24,11 @@
 							<label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
 
 							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-							<input type="submit" value="login"/>
+							<input type="submit" name="submit" class="btn btn-info btn-md" value="login">
 							<span style="color: red; ">
 								<c:if test="${not empty param.loginFailed}">
 									<c:out value="Login Failed, Incorrect UserName or Password"></c:out>
 								</c:if>
-
 
 						</div>
 						<div id="register-link" class="text-right">
