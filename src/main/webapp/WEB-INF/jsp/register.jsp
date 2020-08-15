@@ -33,11 +33,11 @@
                             <input type="password" name="password" id="password" class="form-control">
                             </label><br>
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                            <input type="submit" name="submit" class="btn btn-info btn-md" value="register">
+                            <input type="submit" name="register" class="btn btn-info btn-md" value="register">
                         </div>
 
+                </div>
             </div>
         </div>
     </div>
-</div>
 </body>
