@@ -33,17 +33,5 @@ public class UserService {
         userRepository.save(toEntity(user));
     }
 
-    public void delete(Long id){
-        userRepository.deleteById(id);
-    }
-    public List<Users> getUsers(){
-        return (List<Users>) userRepository.findAll();
-        }
-
-    public Users getUserById(Long id){
-        Optional<Users> optionalUser = userRepository.findById(id);
-        return optionalUser.orElseThrow(() ->new UserNotFoundException(" Could not found User with id :"+ id));
-    }
-
 
 }
