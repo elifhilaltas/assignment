@@ -19,7 +19,7 @@ public class UserRepositoryImpl implements UserRepository {
     JdbcTemplate jdbcTemplate;
 
     public void register(Users user) {
-        String sql = "insert into users values(?,?,?,?,?,?,?)";
+        String sql = "insert into users values(?,?,?,?,?,)";
         jdbcTemplate.update(sql, new Object[]{user.getUsername(), user.getPassword(), user.getName(),
                 user.getSurname(), user.getPhone()});
     }
