@@ -22,7 +22,7 @@ public class LoginController {
     @Autowired
     UserRepository userRepository;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login.html", method = RequestMethod.GET)
     public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView mav = new ModelAndView("login");
         mav.addObject("login", new Login());

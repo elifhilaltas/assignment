@@ -22,7 +22,7 @@ public class RegistrationController {
     @Autowired
     UserRepository userRepository;
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/register.html", method = RequestMethod.GET)
     public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView mav = new ModelAndView("register");
         mav.addObject("user", new Users());
