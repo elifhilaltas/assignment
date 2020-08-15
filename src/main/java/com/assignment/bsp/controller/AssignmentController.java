@@ -27,6 +27,13 @@ public class AssignmentController {
 		return mav;
 		
 	}
+	@RequestMapping(value = "/register.html")
+	public ModelAndView register() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("register");
+		return mav;
+
+	}
 
 }
 

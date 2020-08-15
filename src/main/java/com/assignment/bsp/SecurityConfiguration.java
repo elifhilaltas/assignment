@@ -17,7 +17,7 @@ public class SecurityConfiguration extends AbstractSecurityConfiguration {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/**/favicon.ico","/css/**","/js/**","/images/**","/webjars/**","/login.html").permitAll();
+		http.authorizeRequests().antMatchers("/**/favicon.ico","/css/**","/js/**","/images/**","/webjars/**","/register.html","/login.html").permitAll();
 		http.authorizeRequests().antMatchers("/actuator/**").access("hasRole('ADMIN')");
 		http.authorizeRequests().anyRequest().authenticated();
 		http.formLogin().loginPage("/login.html").loginProcessingUrl("/login").failureUrl("/login.html?loginFailed=true");
