@@ -7,9 +7,6 @@ import com.assignment.bsp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-import java.util.Optional;
-
 
 @Component
 public class UserService {
@@ -25,13 +22,11 @@ public class UserService {
         entity.setPassword(user.getPassword());
         entity.setUsername(user.getUsername());
         entity.setPhone(user.getPhone());
-        entity.setEnabled(user.isEnabled());
+        entity.setEnabled(true);
         return entity;
     }
 
     public void add(Users user){
         userRepository.save(toEntity(user));
     }
-
-
 }
