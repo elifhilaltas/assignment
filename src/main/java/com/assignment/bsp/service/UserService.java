@@ -5,6 +5,7 @@ import com.assignment.bsp.domain.Users;
 import com.assignment.bsp.exception.UserNotFoundException;
 import com.assignment.bsp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 
@@ -13,7 +14,8 @@ public class UserService {
 
     @Autowired
     UserRepository userRepository;
-
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     private Users toEntity(Users user) {
         Users entity = new Users();
@@ -27,10 +29,11 @@ public class UserService {
     }
 
     public void add(Users user){
+        String encryptedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encryptedPassword);
         userRepository.save(toEntity(user));
+
     }
-
-
 
     public Users findByUsername(String username) {
         return userRepository.findByUsername(username);
