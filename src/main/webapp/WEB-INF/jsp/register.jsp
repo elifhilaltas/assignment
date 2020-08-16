@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -10,7 +11,7 @@
         <div id="register-row" class="row justify-content-center align-items-center">
             <div id="register-column" class="col-md-6">
                 <div id="register-box" class="col-md-12">
-                    <form action="register" modelAttribute="user" method="post">
+                    <form:form action="registerProcess" modelAttribute="user" method="post">
                         <h3 class="text-center text-info">Registration</h3>
                         <div class="form-group">
                             <label for="name" class="text-info">First Name:</label><br>
@@ -35,7 +36,7 @@
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                             <input type="submit" name="register" class="btn btn-info btn-md" value="register">
                         </div>
-
+                    </form:form>
                 </div>
             </div>
         </div>
