@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html>
-	<head>
 
-		<meta charset="UTF-8">
-		<title>Assignment Index Page</title>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-	</head>
+<body>
+<div id="register">
+	<h3 class="text-center text-white pt-5">register form</h3>
+	<div class="container">
+		<div id="register-row" class="row justify-content-center align-items-center">
+			<div id="register-column" class="col-md-6">
+				<div id="register-box" class="col-md-12">
+					<h1 class="text-center text-info">Hello! I'm Elif Hilal. Its my Spring Project for Subscreasy.${firstname}</h1>
+					<form action="logout" method="post">
 
-	<body>
-		<h1> index page</h1>
-	
-		<form action="logout" method="post">
-			<input type="submit" value="Logout"/>
-			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>	
-		</form>
-		
-	</body>
+						<a href="/login.html" type="submit"  class="btn btn-info btn-md" value="Login Page" > Logout </a>
 
-</html>
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
