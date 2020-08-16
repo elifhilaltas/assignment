@@ -29,4 +29,11 @@ public class UserService {
     public void add(Users user){
         userRepository.save(toEntity(user));
     }
+
+
+
+    public Users findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
 }

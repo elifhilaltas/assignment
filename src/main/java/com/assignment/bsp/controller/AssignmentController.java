@@ -6,6 +6,7 @@ import com.assignment.bsp.service.AuthorityService;
 import com.assignment.bsp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,11 +52,20 @@ public class AssignmentController {
 
 	@RequestMapping(value = "/registerProcess", method = RequestMethod.POST )
 	public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
-								@ModelAttribute("user") Users user,@ModelAttribute("role") Authorities role) {
+								@ModelAttribute("user") Users user,@ModelAttribute("role") Authorities role, Errors errors) {
 
-		userService.add(user);
-		authorityService.add(role);
-		return new ModelAndView("welcome", "firstname", user.getName());
+		if (userService.findByUsername(user.getUsername()) != null) {
+			errors.rejectValue("username", "Duplicate.userForm.username");
+			return new ModelAndView("registerFail");
+
+		}
+		else {
+			userService.add(user);
+			authorityService.add(role);
+			return new ModelAndView("welcome", "firstname", user.getName());
+		}
+
+
 
 	}
 
