@@ -15,6 +15,7 @@
                         <form:form action="roleProcess" modelAttribute="role"  method="post">
 
                         <h3 class="text-center text-info">Registration</h3>
+
                                 <div class="form-group">
                                     <label for="name" class="text-info">First Name:</label><br>
                                     <input type="text" name="name" id="name" class="form-control">
@@ -26,6 +27,9 @@
                                 <div class="form-group">
                                     <label for="phone" class="text-info">Phone Number:</label><br>
                                     <input type="text" name="phone" id="phone" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name" class="dikkat">Email already used</label><br>
                                 </div>
                                 <div class="form-group">
                                     <label for="username" class="text-info">Email:</label><br>

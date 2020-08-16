@@ -59,7 +59,7 @@ public class Users {
     }
 
     public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+        this.enabled = true;
     }
 
     public String getName() {
