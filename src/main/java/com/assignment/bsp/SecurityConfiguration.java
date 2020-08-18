@@ -19,7 +19,7 @@ public class SecurityConfiguration extends AbstractSecurityConfiguration {
 
 		http.authorizeRequests().antMatchers("/**/favicon.ico","/css/**","/js/**","/images/**","/webjars/**",
 				"/register.html","/login.html","/registerProcess","/login","/register").permitAll();
-		http.authorizeRequests().antMatchers("/actuator/**").access("hasRole('ADMIN')");
+		http.authorizeRequests().antMatchers("/actuator/**").access("hasRole('ROLE_ADMIN')");
 		http.authorizeRequests().anyRequest().authenticated();
 		http.formLogin().loginPage("/login.html").loginProcessingUrl("/login").failureUrl("/login.html?loginFailed=true");
 		http.rememberMe().userDetailsService(userDetailsService);
