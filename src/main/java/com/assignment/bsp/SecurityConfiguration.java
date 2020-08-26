@@ -22,7 +22,7 @@ public class SecurityConfiguration extends AbstractSecurityConfiguration {
 		http.authorizeRequests().antMatchers("/actuator/**").access("hasRole('ROLE_ADMIN')");
 		http.authorizeRequests().anyRequest().authenticated();
 		http.formLogin().loginPage("/login.html").loginProcessingUrl("/login").failureUrl("/login.html?loginFailed=true");
-		http.rememberMe().userDetailsService(userDetailsService);
+		//http.rememberMe().userDetailsService(userDetailsService);
 		}
 	
 	
